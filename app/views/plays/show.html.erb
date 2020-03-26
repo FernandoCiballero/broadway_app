@@ -11,6 +11,10 @@
     <strong>Director: </strong>
     <%= @play.director %>
   </p>
+  <p>
+    <strong>Category: </strong>
+    <%= @play.category.name %>
+  </p>
 
 <div class="btn-group">
   <%= link_to "Back to index", plays_path, class:"btn btn-info" %>
