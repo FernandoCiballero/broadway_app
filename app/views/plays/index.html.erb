@@ -1,4 +1,10 @@
-<% @plays.each do |play| %>
-  <%= link_to play.title, play_path(play) %>
-  <br>
+<h1><%= params[:category] %></h1>
+
+<% if @plays.count == 0 %>
+  <h3>There are not records for this category</h3>
+<% else %>
+  <% @plays.each do |play| %>
+    <%= link_to play.title, play_path(play) %>
+    <br>
+  <% end %>
 <% end %>
