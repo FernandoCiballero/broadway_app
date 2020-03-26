@@ -12,6 +12,12 @@
     <%= @play.director %>
   </p>
 
-<%= link_to "Back to index", plays_path %>
-<%= link_to "Edit", edit_play_path(@play) %>
-<%= link_to "Delete", play_path(@play), method: :delete, data:{confirm:"Are you Shure?"} %>
+<div class="btn-group">
+  <%= link_to "Back to index", plays_path, class:"btn btn-info" %>
+  <% if user_signed_in? %>
+    <% if @play.user_id == current_user.id %>
+      <%= link_to "Edit", edit_play_path(@play), class:"btn btn-success" %>
+      <%= link_to "Delete", play_path(@play), method: :delete, data:{confirm:"Are you Shure?"}, class:"btn btn-warning" %>
+    <% end %>
+  <% end %>
+</div>
