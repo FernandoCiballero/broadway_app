@@ -13,3 +13,5 @@
   </p>
 
 <%= link_to "Back to index", plays_path %>
+<%= link_to "Edit", edit_play_path(@play) %>
+<%= link_to "Delete", play_path(@play), method: :delete, data:{confirm:"Are you Shure?"} %>
