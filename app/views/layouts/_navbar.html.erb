@@ -10,6 +10,19 @@
         <li class="nav-item">
           <%= link_to "Add Play", new_play_path, class:"nav-link" %>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% Category.all.each do |category| %>
+              <% if params[:category]== category.name %>
+                <%= link_to category.name, plays_path(category: category.name), class:"dropdown-item active" %>
+              <% else %>
+                <%= link_to category.name, plays_path(category: category.name), class:"dropdown-item" %>
+              <% end %>
+            <% end %>
+          </div>
       <% end %>
     </ul>
     <ul class="navbar-nav">

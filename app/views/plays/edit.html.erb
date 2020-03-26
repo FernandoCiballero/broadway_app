@@ -1,5 +1,11 @@
 <h1>Edit play</h1>
 
-<%= render 'form' %>
+<%= simple_form_for @play, html:{multipart: true} do |f| %>
+  <%= f.select :category_id, @categories %>
+  <%= f.input :title, label: "Play Title" %>
+  <%= f.input :description %>
+  <%= f.input :director %>
+  <%= f.button :submit, class:"btn btn-primary" %>
+<% end %>
 
 <%= link_to "Back to show page", play_path(@play) %>
