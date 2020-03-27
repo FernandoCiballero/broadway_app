@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:reviews).permit(:rating, :comment)
+    params.require(:review).permit(:rating, :comment)
   end
 
   def find_play

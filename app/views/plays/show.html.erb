@@ -27,6 +27,11 @@
   </p>
   <% end %>
 
+  <h3>Reviews</h3>
+    <%= render @play.reviews %>
+
+    <%= link_to "Add reviews", new_play_review_path(@play), class:"btn btn-primary" %>
+
 <div class="btn-group">
   <%= link_to "Back to index", plays_path, class:"btn btn-info" %>
   <% if user_signed_in? %>
