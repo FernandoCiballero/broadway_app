@@ -15,10 +15,17 @@
     <strong>Category: </strong>
     <%= @play.category.name %>
   </p>
+  <% if @play.image.blank?%>
+  <p>
+    <strong>Image: </strong>
+    no image available
+  </p>
+  <% else %>
   <p>
     <strong>Image: </strong>
     <%= image_tag(@play.image) %>
   </p>
+  <% end %>
 
 <div class="btn-group">
   <%= link_to "Back to index", plays_path, class:"btn btn-info" %>

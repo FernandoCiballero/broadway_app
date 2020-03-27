@@ -3,8 +3,17 @@
 <% if @plays.count == 0 %>
   <h3>There are not records for this category</h3>
 <% else %>
-  <% @plays.each do |play| %>
-    <%= link_to play.title, play_path(play) %>
-    <br>
-  <% end %>
+  <div class="row">
+    <% @plays.each do |play| %>
+      <div class="col-md-3">
+        <a href="/plays/<%= play.id%>%">
+          <% if play.image.attached? %>
+            <%= image_tag(rails_blob_path(play.image, disposition: "attachment"), style: 'height:300px ;width:300px;') %>
+          <% else %>
+            <%= play.title %>
+          <% end %>
+        </a>
+      </div>
+    <% end %>
+  </div>
 <% end %>
