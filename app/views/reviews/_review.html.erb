@@ -1,5 +1,14 @@
 <p><%= review.rating %></p>
-<p><%= review.comment %></p>
+<p>
+  <strong>Rating: </strong>
+  <% review.rating.times do %>
+    <i class="fas fa-star text-warning"></i>
+  <% end %>
+  <% review.blank_stars.times do %>
+    <i class="far fa-star text-secondary"></i>
+  <% end %>
+</p>
+<p><%= review.comment %></p>  
 
 <div class="btn-group">
   <% if user_signed_in? %>
@@ -9,3 +18,4 @@
     <% end %>
   <% end %>
 </div>
+
