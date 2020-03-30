@@ -10,6 +10,7 @@ class PlaysController < ApplicationController
   end
 
   def show
+    @avg_rating = Play.find(params[:id]).reviews.average(:rating).to_f
   end
 
   def new

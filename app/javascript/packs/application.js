@@ -10,6 +10,7 @@ require("channels")
 
 require("bootstrap")
 require("@fortawesome/fontawesome-free")
+require("./custom")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

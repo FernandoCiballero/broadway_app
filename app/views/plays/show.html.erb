@@ -23,11 +23,19 @@
   <% else %>
   <p>
     <strong>Image: </strong>
-    <%= image_tag(@play.image) %>
+    <%= image_tag(@play.image, options = {width:"400px", height: "600px"}) %>
   </p>
   <% end %>
-  
- 
+
+  <strong>Average Rating: </strong>
+  <span class="fa-stack fa-2x">
+    <i class="fas fa-star fa-stack-2x text-warning"></i>
+      <span class="fa-stack-1x text-light">
+        <span style="font-size:20px; font-weight: 600; display:block;">
+            <%= @avg_rating %>
+        </span>
+      </span>
+  </span>
 
   <h3>Reviews</h3>
     <%= render @play.reviews %>
