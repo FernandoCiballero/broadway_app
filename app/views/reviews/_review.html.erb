@@ -1,21 +1,21 @@
-<p><%= review.rating %></p>
-<p>
-  <strong>Rating: </strong>
-  <% review.rating.times do %>
-    <i class="fas fa-star text-warning"></i>
-  <% end %>
-  <% review.blank_stars.times do %>
-    <i class="far fa-star text-secondary"></i>
-  <% end %>
-</p>
-<p><%= review.comment %></p>  
-
-<div class="btn-group">
-  <% if user_signed_in? %>
-    <% if review.user_id == current_user.id %>
-      <%= link_to "Edit Review", edit_play_review_path(review.play, review), class:"btn btn-success" %>
-      <%= link_to "Delete Review", play_review_path(review.play, review), method: :delete, data:{confirm:"Are you Shure?"}, class:"btn btn-warning" %>
+<div class="m-3">
+  <p>
+    <strong>Rating: </strong>
+    <% review.rating.times do %>
+      <i class="fas fa-star text-warning"></i>
     <% end %>
-  <% end %>
-</div>
+    <% review.blank_stars.times do %>
+      <i class="far fa-star text-secondary"></i>
+    <% end %>
+  </p>
+  <p><%= review.comment %></p>  
 
+  <div class="btn-group">
+    <% if user_signed_in? %>
+      <% if review.user_id == current_user.id %>
+        <%= link_to "Edit", edit_play_review_path(review.play, review), class:"mr-3" %>
+        <%= link_to "Delete", play_review_path(review.play, review), method: :delete, data:{confirm:"Are you Shure?"} %>
+      <% end %>
+    <% end %>
+  </div>
+</div>

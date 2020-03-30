@@ -13,8 +13,13 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 @import '@fortawesome/fontawesome-free/css/all.css';
+
+@font-face {
+  font-family:'KumarOne';
+  src:font-url('KumarOne-Regular.ttf');
+}
 
 
 
